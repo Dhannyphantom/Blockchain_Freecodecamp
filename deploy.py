@@ -23,3 +23,10 @@ compiled_sol = compile_standard(
 
 with open("./compiled_code.json", "w") as file:
     json.dump(compiled_sol, file )
+
+# TO DEPLOY WE NEED ;
+# 1. BYTECODE / BYTECODE OBJECT
+# 2. ABI
+
+bytecode = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["evm"]["bytecode"]["object"]
+abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]

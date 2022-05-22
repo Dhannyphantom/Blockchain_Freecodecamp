@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 
 contract SimpleStorage {
     uint favoriteNumber;
-    mapping(string -> uint) public nameToFavNumber;
+    mapping(string => uint) public nameToFavNumber;
 
     struct Person {
         string name;

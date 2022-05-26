@@ -82,4 +82,5 @@ send_store_txn = w3.eth.send_raw_transaction(sign_store_txn.rawTransaction)
 store_txn_receipt = w3.eth.wait_for_transaction_receipt(send_store_txn)
 
 print("Contract updated...")
+
 print(simple_storage.functions.retrieve().call())

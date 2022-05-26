@@ -1,2 +1,8 @@
 compiled_code.json
 .env
+brownie_simple_storage/scripts/__pycache__
+brownie_simple_storage/.env
+brownie_simple_storage/.history
+brownie_simple_storage/.hypothesis/
+brownie_simple_storage/build/
+brownie_simple_storage/reports/

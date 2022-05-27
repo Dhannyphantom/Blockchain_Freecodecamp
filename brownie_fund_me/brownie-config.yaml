@@ -3,8 +3,8 @@ wallets:
   from_key: ${PRIVATE_KEY}
 dependencies:
   # - <organization>/<repo-name>@<verison>
-  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+  - smartcontractkit/chainlink-brownie-contracts@0.4.1
 compiler:
   solc:
     remappings:
-      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1"
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.4.1"

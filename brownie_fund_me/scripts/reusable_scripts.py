@@ -5,7 +5,7 @@ conn_network = network.show_active()
 LOCAL_CHAIN_VAR = ["development", "ganache-local"]
 
 DECIMALS = 8
-STARTING_PRICE = 2000
+STARTING_PRICE = 1
 
 def get_account():
     if conn_network in LOCAL_CHAIN_VAR:

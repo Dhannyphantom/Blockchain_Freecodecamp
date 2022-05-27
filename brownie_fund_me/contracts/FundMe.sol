@@ -49,6 +49,12 @@ contract FundMe {
         return priceFeed.version();
     }
 
+    function getEntranceFee() public view returns (uint) {
+        uint minimumUSD = 50 * 10 ** 8;
+        uint ethUSDPrice = getPrice() / 10 ** 18;
+        return (minimumUSD * 10 ** 8) / ethUSDPrice;
+    }
+
     function getPrice() public view returns (uint) {
         (, int price,,,) = priceFeed.latestRoundData();
         return uint(price);

@@ -2,12 +2,13 @@ from brownie import network, accounts, config,MockV3Aggregator
 from web3 import Web3
 
 conn_network = network.show_active()
+LOCAL_CHAIN_VAR = ["development", "ganache-local"]
 
 DECIMALS = 8
 STARTING_PRICE = 2000
 
 def get_account():
-    if conn_network == "development":
+    if conn_network in LOCAL_CHAIN_VAR:
         return accounts[0]
     else:
         return accounts.add(config["wallets"]["from_key"])

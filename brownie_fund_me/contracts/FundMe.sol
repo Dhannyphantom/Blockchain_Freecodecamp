@@ -9,9 +9,11 @@ contract FundMe {
     mapping (address=>uint) public addressToAmount;
     address public owner;
     address[] public funders;
+    AggregatorV3Interface public priceFeed;
 
-    constructor() {
+    constructor(address _priceFeedAddress) {
         owner = msg.sender;
+        priceFeed = AggregatorV3Interface(_priceFeedAddress);
     }
 
     modifier onlyOwner {
@@ -41,14 +43,13 @@ contract FundMe {
     }
 
     // RINKEBY PRICE FEED ADDRESS IS USED
+    // 0x8A753747A1Fa494EC906cE90E9f37563A8AF630e
 
     function getVersion() public view returns (uint) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         return priceFeed.version();
     }
 
     function getPrice() public view returns (uint) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         (, int price,,,) = priceFeed.latestRoundData();
         return uint(price);
     }

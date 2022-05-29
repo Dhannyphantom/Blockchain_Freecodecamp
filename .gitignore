@@ -15,3 +15,4 @@ brownie_fund_me/reports/
 test_fundMe/node_modules/
 test_fundMe/package.json
 test_fundMe/package-lock.json
+brownie_fund_me/tests/__pycache__/

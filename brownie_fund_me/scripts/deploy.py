@@ -13,6 +13,7 @@ def deploy_fund_me():
 
     fund_me = FundMe.deploy(price_feed_address, {"from": account}, publish_source=config["networks"][conn_network].get("verify"))
     print(f"Contract deployed to {fund_me.address} Yay!!!!!!")
+    return fund_me
 
 def main():
     deploy_fund_me()

@@ -1,6 +1,7 @@
 from brownie import FundMe
 from scripts.reusable_scripts import get_account
 
+
 def fund():
     account = get_account()
     fund_me = FundMe[-1]
@@ -11,12 +12,14 @@ def fund():
     deploy_txn.wait(1)
     print("Funded!")
 
+
 def withdraw():
     account = get_account()
     fund_me = FundMe[-1]
     print("Withrawing funds...")
     fund_me.withdraw({"from": account})
     print("Withdrawn!")
+
 
 def main():
     fund()
